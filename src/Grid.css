@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.grid {
+    /* li에 따라 가변되어야 함 */
+    max-width: 560px;           
+    min-width: 560px;
+}
+
+.grid p {
+    word-break:break-all;
+}
+
+.block_line {
+    list-style: none;
+}
+
+.block_line li {
+    float: left;
+    width: 10px;
+    height: 10px;
+    font-size: 3pt;
+
+    background-color: #DDD;
+
+    margin: 1.5px;
+    margin-right: 4px;
+
+    cursor: pointer;
+}
+
+.block_line li:hover {
+
+    margin: 0.5px;
+    margin-right: 3px;
+
+    width: 12px;
+    height: 12px;
+
+    background-color: #AAA;
+}
+
+.block_line li[area='0'] {
+    opacity: 0;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.square {
+}
+
