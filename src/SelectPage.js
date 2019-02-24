@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import './SelectPage.css'
 
 class SelectPage extends Component {
@@ -20,8 +19,11 @@ class SelectPage extends Component {
 
     // Page view 전환
     handlePageSelect = (e) => {
-        let {page_list, index} = this.state;
         e.preventDefault();
+
+        let {page_list, index} = this.state;
+
+        // Arrow
         if (e.target.getAttribute('type') === 'left' && index > 0) {
             this.setState({
                 'index': --index
@@ -32,7 +34,18 @@ class SelectPage extends Component {
                 'index': ++index
             })
         }
-        this.props.modeChange(page_list[index], 'purchage', 'period');
+        // State 변화 시에만 modeChange 되도록 수정해야 할듯
+        let category, type, year = 2018;
+
+        if (index == 0) {
+            type = page_list[index];
+            category = '';
+        } else {
+            type = page_list[index].split('(')[0];
+            category = page_list[index].split('(')[1].split(')')[0];
+        }
+        
+        this.props.modeChange(category, type, year);
     }
 
     render() {

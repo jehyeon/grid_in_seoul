@@ -3,7 +3,8 @@ import './App.css'
 
 import { type, values } from './json/seoul_grid.json'
 import area_id from './json/seoul_id.json'
-import { data } from './json/seoul_price.json'
+// import { data } from './json/seoul_price.json'
+import { datas } from './json/datas.json'
 
 import SelectPage from './SelectPage'
 import Grid from './Grid'
@@ -11,20 +12,32 @@ import Ranking from './Ranking'
 
 class App extends Component {
   state = {
-    prices: [],
+    prices: {},
+    category: '',
+    year: '',
     highlight: -1
   }
 
-  ModeChange = (house_type, order, period) => {
-    if (house_type === 'region') {
+  ModeChange = (category, type, year) => {
+    if (type === '지역') {
       this.setState({
         prices: []
       });
     } else {
+      let data = datas.find((element) => {
+        if (element['period'].indexOf(year) >= 0 && 
+            element['category'] == category &&
+            element['type'] == type) {
+          return element;
+        }
+      });
+
       this.setState({
-        prices: data[house_type][order][period].prices
+        prices: data['prices']
       });
     }
+
+    // Category, year가 바뀔 때마다 highlight 초기화
     this.setState({
       highlight: -1
     });
@@ -37,7 +50,7 @@ class App extends Component {
   }
 
   render() {
-    const page_list = ['region', 'office', 'appartment'];
+    const page_list = ['지역', '오피스텔(매매)', '오피스텔(전세)', '아파트(매매)', '아파트(전세)'];
 
     return (
       <div className="App">

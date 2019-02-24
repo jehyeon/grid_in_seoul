@@ -6,7 +6,7 @@ import sort_by from './utils/SortBy'
 
 class Ranking extends Component {
     state = {
-        prices: []
+        prices: {}
     }
 
     constructor (props) {
@@ -31,12 +31,11 @@ class Ranking extends Component {
     }
 
     render() {
-        const rank_array = [];
         const { prices } = this.state;
-        for (let id in Object.keys(seoul_id)) {
-            rank_array.push({'id':id, 'area_name':seoul_id[id], 'price':prices[id]});
-        }
-
+        const rank_array = Object.keys(prices).map((key) => {
+            return {'area_name': key, 'price': prices[key]}
+        });
+    
         // price 기준으로 정렬
         rank_array.sort(sort_by('price',true,parseInt))
         const rank = rank_array.map(data => {
