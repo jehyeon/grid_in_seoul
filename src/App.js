@@ -25,6 +25,9 @@ class App extends Component {
         prices: data[house_type][order][period].prices
       });
     }
+    this.setState({
+      highlight: -1
+    });
   }
 
   HandleHighLight = (area_id) => {

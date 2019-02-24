@@ -15,8 +15,10 @@ class Grid extends Component {
                     if (highlight == -1) {                        
                         bg['backgroundColor'] = get_color(block, average, prices[block])
                     } else if (highlight == block) {
-                        // bg['background-color'] = get_color(block, average, prices[block])    
-                        bg['backgroundColor'] = '#999';
+                        bg['background-color'] = get_color(block, average, prices[block])
+                    }
+                    else {
+                        bg['backgroudn-color'] = '#EEE';
                     }
                     
                     return (

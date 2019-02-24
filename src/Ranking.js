@@ -42,7 +42,9 @@ class Ranking extends Component {
         const rank = rank_array.map(data => {
             if (data['area_name'] === undefined || data['price'] ===  -1) { return null; }
             return (
-            <li area_id={data['id']} onClick={this.UpdateHighlight}><div className='area_name'>{data['area_name']}</div><div className='price'>{data['price']}</div></li>
+                <li area_id={data['id']} onClick={this.UpdateHighlight}>
+                    {data['area_name']} {data['price']}
+                </li>
             );
         });
         return (
