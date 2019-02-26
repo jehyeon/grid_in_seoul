@@ -15,7 +15,7 @@ class App extends Component {
     prices: {},
     category: '',
     year: '',
-    highlight: -1
+    highlight: ''
   }
 
   ModeChange = (category, type, year) => {
@@ -24,6 +24,7 @@ class App extends Component {
         prices: []
       });
     } else {
+      console.log(year);
       let data = datas.find((element) => {
         if (element['period'].indexOf(year) >= 0 && 
             element['category'] == category &&
@@ -31,32 +32,35 @@ class App extends Component {
           return element;
         }
       });
-
-      this.setState({
-        prices: data['prices']
-      });
+      
+      console.log(data);
+      if (data !== undefined) {
+        this.setState({
+          prices: data['prices']
+        });
+      }
     }
 
     // Category, year가 바뀔 때마다 highlight 초기화
     this.setState({
-      highlight: -1
+      highlight: ''
     });
   }
 
-  HandleHighLight = (area_id) => {
+  HandleHighLight = (area_name) => {
     this.setState({
-      highlight: parseInt(area_id)
+      highlight: area_name
     });
   }
 
   render() {
     const page_list = ['지역', '오피스텔(매매)', '오피스텔(전세)', '아파트(매매)', '아파트(전세)'];
-
+    const year_list = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018];
     return (
       <div className="App">
         <h1>Grid in Seoul</h1>
         {/* View 모드 선택 컴포넌트 */}
-        <SelectPage page_list={page_list} modeChange={this.ModeChange}/>
+        <SelectPage page_list={page_list} year_list={year_list} modeChange={this.ModeChange}/>
 
         {/* 서울 지도 컴포넌트 */}
         <Grid type={ type } areas={ values } prices={this.state.prices} highlight={this.state.highlight}/>

@@ -40,7 +40,25 @@
     height: 12px;
 }
 
+.block_line li span {
+    position: absolute;
+    display: none;
+    
+    margin-top: -25px;
+    padding: 2px;
+
+    color: white;
+    font-size: 9pt;
+
+    background-color: black;
+    border-radius: 5px;
+}
+.block_line li:hover span{
+    display: inline;
+}
+
 .block_line li[area='0'] {
+    cursor: default;
     opacity: 0;
 }
 

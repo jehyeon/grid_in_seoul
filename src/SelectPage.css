@@ -32,3 +32,32 @@
 
     cursor: default;
 }
+
+.ok ul {
+    list-style: none;
+    margin-top: -25px;
+    margin-bottom: 25px;
+}
+
+.ok ul li {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 9pt;
+    cursor: pointer;
+
+    z-index: 10;
+}
+
+.ok ul li:last-child {
+    margin-right: 0;
+}
+
+.ok ul li p {
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #AAA;
+
+    margin-left: 10px;
+}

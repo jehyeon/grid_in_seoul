@@ -6,7 +6,8 @@ import sort_by from './utils/SortBy'
 
 class Ranking extends Component {
     state = {
-        prices: {}
+        prices: {},
+        highlight: ''
     }
 
     constructor (props) {
@@ -15,23 +16,27 @@ class Ranking extends Component {
 
     static getDerivedStateFromProps (nextProps, prevState) {
         if (nextProps.prices !== prevState.prices) {
-            // console.log(nextProps.prices);
             return { prices: nextProps.prices };
         }
         return null;
     }
 
     UpdateHighlight = (e) => {
-        // this.setState({
-        //     highlight: e.target.getAttribute('area_id')
-        // });
-        console.log(e.target.getAttribute('area_id'));
-        this.props.handleHighLight(e.target.getAttribute('area_id'));
-        console.log(this.props);
+        if (this.state.highlight !== e.target.getAttribute('area')) {
+            this.setState({
+                'highlight': e.target.getAttribute('area')
+            });
+            this.props.handleHighLight(e.target.getAttribute('area'));
+        } else {
+            this.setState({
+                'highlight': ''
+            });
+            this.props.handleHighLight('');            
+        }
     }
 
     render() {
-        const { prices } = this.state;
+        const { prices, highlight } = this.state;
         const rank_array = Object.keys(prices).map((key) => {
             return {'area_name': key, 'price': prices[key]}
         });
@@ -40,11 +45,21 @@ class Ranking extends Component {
         rank_array.sort(sort_by('price',true,parseInt))
         const rank = rank_array.map(data => {
             if (data['area_name'] === undefined || data['price'] ===  -1) { return null; }
-            return (
-                <li area_id={data['id']} onClick={this.UpdateHighlight}>
-                    {data['area_name']} {data['price']}
-                </li>
-            );
+
+            if (highlight === data['area_name']) {
+                return (
+                    <li area={data['area_name']} onClick={this.UpdateHighlight} style={{'background-color': '#CCC'}}>
+                        {data['area_name']} {data['price']}
+                    </li>
+                )
+            }
+            else {
+                return (
+                    <li area={data['area_name']} onClick={this.UpdateHighlight}>
+                        {data['area_name']} {data['price']}
+                    </li>
+                );
+            }
         });
         return (
             <div className='ranking-box'>

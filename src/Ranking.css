@@ -37,13 +37,6 @@
     background-color: #EEE;
 }
 
-/* .ranking-box .ranking li .area_name {
-    float: left;
-}
-
-.ranking-box .ranking li .price {
-    float: right;
-} */
 /* Scroll bar */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-button:start:decrement, 
