@@ -1,6 +1,11 @@
 .select_view {
-    position: relative;
-    top: -35px;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    
+    margin-left: -100px;
+
+    width: 200px;
 }
 
 .left {
@@ -41,7 +46,7 @@
 
 .ok ul li {
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 30px;
     font-size: 9pt;
     cursor: pointer;
 

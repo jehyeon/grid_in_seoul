@@ -18,7 +18,6 @@ class Grid extends Component {
             return {'area_name': key, 'price': prices[key]}
         });
         rank_array.sort(sort_by('price',true,parseInt))
-
         let average = parseInt(rank_array.map(element => element['price']).reduce(((a,b) => a + b), 0)/rank_array.length);
         const color = 135;
 
@@ -27,10 +26,9 @@ class Grid extends Component {
                 {line.map(block => {
                     // 기본 color
                     let style = {'backgroundColor': '#EEE'};
-
                     if (block !== 0 && rank_array.length > 0) {
                         let ratio = average / rank_array.find(element => element['area_name'] === area_list[block]).price * 1.1;
-                        style['backgroundColor'] = 'rgb(' + color * ratio + ',' + color * ratio + ',255)';
+                        style['backgroundColor'] = 'rgb(' + parseInt(color * ratio) + ',' + parseInt(color * ratio) + ',255)';
                     }
                     
                     // highlight가 select 시 다른 block을 작게 
