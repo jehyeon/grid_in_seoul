@@ -25,7 +25,7 @@ class App extends Component {
       });
     } else {
       let data = datas.find((element) => {
-        if (element['period'].indexOf(year) >= 0 && 
+        if (element['period'].indexOf(year) === 0 && 
             element['category'] === category &&
             element['type'] === type) {
           return element;

@@ -17,9 +17,13 @@ class Grid extends Component {
         const rank_array = Object.keys(prices).map((key) => {
             return {'area_name': key, 'price': prices[key]}
         });
-        rank_array.sort(sort_by('price',true,parseInt))
-        let average = parseInt(rank_array.map(element => element['price']).reduce(((a,b) => a + b), 0)/rank_array.length);
         const color = 135;
+        if (rank_array.length !== 0) {
+            rank_array.sort(sort_by('price',true,parseInt))
+            var average = parseInt(rank_array.map(element => element['price']).reduce(((a,b) => a + b), 0)/rank_array.length);
+        } else {
+            var on = {'opacity': '1'};
+        }
 
         const grid = areas.map( line => (                    
             <ul className="block_line">
@@ -44,6 +48,7 @@ class Grid extends Component {
                         style['height'] = '12px';
                     }
 
+
                     return (
                         <li 
                             area={area_list[block]}
@@ -56,10 +61,11 @@ class Grid extends Component {
                 })}
             </ul>
         ));
-
+        
         return (
             <div className='grid'>
                 { grid }
+                <h1 style={on}>No data</h1>
             </div>
         );
     }

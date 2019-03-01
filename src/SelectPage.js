@@ -54,7 +54,6 @@ class SelectPage extends Component {
             type = pages[index].split('(')[0];
             category = pages[index].split('(')[1].split(')')[0];
         }
-        
         this.props.modeChange(category, type, year);
     }
 
