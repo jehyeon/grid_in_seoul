@@ -47,13 +47,9 @@ class SelectPage extends Component {
             year = e.target.getAttribute('data');
         }
         // State 변화 시에만 modeChange 되도록 수정해야 할듯
-        if (index === 0) {
-            type = pages[index];
-            category = '';
-        } else {
-            type = pages[index].split('(')[0];
-            category = pages[index].split('(')[1].split(')')[0];
-        }
+        type = pages[index].split('(')[0];
+        category = pages[index].split('(')[1].split(')')[0];
+        
         this.props.modeChange(category, type, year);
     }
 
@@ -63,7 +59,6 @@ class SelectPage extends Component {
 
         const year_select = years.map((element) => {
             let style = {}
-            if (index === 0) { style['opacity'] = '0'; }
             if (year === element) { style['color'] = 'blue'; }
             return (
                 <li data={element} className='year' type='year' onClick={this.handlePageSelect} style={style}>

@@ -13,10 +13,11 @@ class Grid extends Component {
             '성동구','성북구','서초구','양천구','영등포구',
             '용산구','은평구','종로구','중구','중랑구'
         ];
-
+        console.log(this.state);
         const rank_array = Object.keys(prices).map((key) => {
             return {'area_name': key, 'price': prices[key]}
         });
+
         const color = 135;
         if (rank_array.length !== 0) {
             rank_array.sort(sort_by('price',true,parseInt))
@@ -47,7 +48,6 @@ class Grid extends Component {
                         style['width'] = '12px';
                         style['height'] = '12px';
                     }
-
 
                     return (
                         <li 

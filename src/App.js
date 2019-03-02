@@ -17,7 +17,7 @@ class App extends Component {
     year: '',
     highlight: ''
   }
-
+  
   ModeChange = (category, type, year) => {
     if (type === '지역') {
       this.setState({
@@ -31,8 +31,6 @@ class App extends Component {
           return element;
         }
       });
-
-      console.log(data, data['prices']);
       
       if (data !== undefined) {
         this.setState({
@@ -54,7 +52,7 @@ class App extends Component {
   }
 
   render() {
-    const page_list = ['지역', '오피스텔(매매)', '오피스텔(전세)', '아파트(매매)', '아파트(전세)'];
+    const page_list = ['오피스텔(매매)', '오피스텔(전세)', '아파트(매매)', '아파트(전세)'];
     const year_list = ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'];
     return (
       <div className="App">
