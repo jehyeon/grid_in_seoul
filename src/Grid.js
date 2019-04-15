@@ -13,7 +13,6 @@ class Grid extends Component {
             '성동구','성북구','서초구','양천구','영등포구',
             '용산구','은평구','종로구','중구','중랑구'
         ];
-        console.log(this.state);
         const rank_array = Object.keys(prices).map((key) => {
             return {'area_name': key, 'price': prices[key]}
         });
