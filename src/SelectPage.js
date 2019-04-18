@@ -68,7 +68,7 @@ class SelectPage extends Component {
             )
         });
         return(
-            <div className="ok">
+            <div className="wrapper">
                 <div className='select_view'>
                     <div className='left' type='left' onClick={this.handlePageSelect}></div>
                     <div className='text'>{ now_page }</div>
