@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Grid.css';
+import './Grid.scss';
 
 import sort_by from './utils/SortBy'
 

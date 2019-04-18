@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './SelectPage.css'
+import './SelectPage.scss'
 
 class SelectPage extends Component {
     // state 초기화

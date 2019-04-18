@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './Ranking.css';
+import './Ranking.scss';
 
 import seoul_id from './json/seoul_id.json'
 import sort_by from './utils/SortBy'

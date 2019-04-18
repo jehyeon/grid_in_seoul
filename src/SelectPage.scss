@@ -1,0 +1,64 @@
+@charset 'utf-8';
+
+/* 매직 넘버 삭제 예정 */
+.ok {
+	.select_view {
+		position: absolute;
+		left: 50%;    
+		bottom: 50px;
+		margin-left: -100px;
+		width: 200px;
+
+		.left {
+			display: inline-block;
+			border: 8px solid;
+			border-color: transparent #DDD transparent transparent;
+			cursor: pointer;
+		}
+		
+		.text {
+			position: relative;
+			top: -3px;
+			display: inline;
+			margin: 0 15px 0 15px;
+			color: #777;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 300;
+			cursor: default;
+		}
+
+		.right {
+			display: inline-block;
+			border: 8px solid;
+			border-color: transparent transparent transparent #DDD;
+			cursor: pointer;
+		}
+	}
+
+	ul {
+		list-style: none;
+		margin-top: -25px;
+		margin-bottom: 25px;
+
+		li {
+			display: inline-block;
+			margin-right: 30px;
+			font-size: 9pt;
+			z-index: 10;
+			cursor: pointer;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			p {
+				display: block;
+				width: 5px;
+				height: 5px;
+				border-radius: 50%;
+				background-color: #AAA;
+				margin-left: 10px;
+			}
+		}
+	}
+}
