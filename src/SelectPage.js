@@ -25,7 +25,7 @@ class SelectPage extends Component {
   handlePageSelect = e => {
     e.preventDefault();
 
-    const { pages, index } = this.state;
+    let { pages, index } = this.state;
     let category,
       type,
       year = '2018';
