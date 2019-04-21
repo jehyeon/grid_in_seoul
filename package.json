@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "eslint-config-airbnb": "^17.1.0",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -15,7 +16,7 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": ["react-app", "airbnb"]
   },
   "browserslist": [
     ">0.2%",
