@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
-const Block = ({area_number}) => {
-    return (
-        <li area={area_number}/>
-    );
-}
+const Block = ({ areaNumber }) => {
+  return <li area={areaNumber} />;
+};
 
 export default Block;
