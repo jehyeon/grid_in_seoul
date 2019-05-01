@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import { type, values } from './json/seoul_grid.json';
-import area_id from './json/seoul_id.json';
+// import area_id from './json/seoul_id.json';
 // import { data } from './json/seoul_price.json'
 import { datas } from './json/datas.json';
 
@@ -24,19 +24,17 @@ class App extends Component {
         prices: [],
       });
     } else {
-      let data = datas.find(element => {
-        if (
-          element['period'].indexOf(year) === 0 &&
-          element['category'] === category &&
-          element['type'] === type
-        ) {
+      const data = datas.find((element) => {
+        if (element.period.indexOf(year) === 0
+          && element.category === category
+          && element.type === type) {
           return element;
         }
       });
 
       if (data !== undefined) {
         this.setState({
-          prices: data['prices'],
+          prices: data.prices,
         });
       }
     }
@@ -47,20 +45,20 @@ class App extends Component {
     });
   };
 
-  HandleHighLight = area_name => {
+  HandleHighLight = (areaName) => {
     this.setState({
-      highlight: area_name,
+      highlight: areaName,
     });
   };
 
   render() {
-    const page_list = [
+    const pageList = [
       '오피스텔(매매)',
       '오피스텔(전세)',
       '아파트(매매)',
       '아파트(전세)',
     ];
-    const year_list = [
+    const yearList = [
       '2010',
       '2011',
       '2012',
@@ -76,8 +74,8 @@ class App extends Component {
         <h1>Grid in Seoul</h1>
         {/* View 모드 선택 컴포넌트 */}
         <SelectPage
-          page_list={page_list}
-          year_list={year_list}
+          page_list={pageList}
+          year_list={yearList}
           modeChange={this.ModeChange}
         />
 

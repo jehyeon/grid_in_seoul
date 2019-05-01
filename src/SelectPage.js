@@ -22,7 +22,7 @@ class SelectPage extends Component {
   }
 
   // Page view 전환
-  handlePageSelect = e => {
+  handlePageSelect = (e) => {
     e.preventDefault();
 
     let { pages, index } = this.state;

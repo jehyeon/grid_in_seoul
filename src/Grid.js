@@ -6,7 +6,7 @@ import sortBy from './utils/SortBy';
 class Grid extends Component {
   render() {
     const { type, areas, prices, highlight } = this.props;
-    const area_list = [
+    const areaList = [
       '0',
       '강남구',
       '강동구',
@@ -34,14 +34,14 @@ class Grid extends Component {
       '중구',
       '중랑구',
     ];
-    const rank_array = Object.keys(prices).map(key => {
+    const rank_array = Object.keys(prices).map((key) => { 
       return { area_name: key, price: prices[key] };
     });
 
     const color = 135;
     if (rank_array.length !== 0) {
-      rank_array.sort(sort_by('price', true, parseInt));
-      var average = parseInt(
+      rank_array.sort(sortBy('price', true, parseInt));
+      const average = parseInt(
         rank_array.map(element => element['price']).reduce((a, b) => a + b, 0) /
           rank_array.length,
       );
