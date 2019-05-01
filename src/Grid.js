@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Grid.scss';
 
-import sort_by from './utils/SortBy';
+import sortBy from './utils/SortBy';
 
 class Grid extends Component {
   render() {

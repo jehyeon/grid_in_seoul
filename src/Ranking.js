@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Ranking.scss';
 
 import seoul_id from './json/seoul_id.json';
-import sort_by from './utils/SortBy';
+import sortBy from './utils/SortBy';
 
 class Ranking extends Component {
   state = {
