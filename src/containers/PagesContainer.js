@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import Pages from '../components/Pages';
-// import { nextPage, previousPage, selectPage } from '../store/modules/pages';
 import { nextPage, previousPage, selectPage } from '../store/modules/pages';
 
 class PageContainer extends Component {
@@ -30,7 +29,6 @@ class PageContainer extends Component {
 
   render() {
     const { cursor } = this.props;
-    console.log(this.props);
     return (
       <Pages
         onNext={this.handleNext}
