@@ -2,25 +2,26 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import BlockBox from '../components/Map';
-import { getMapData } from '../store/modules/map';
+import { getValues } from '../store/modules/values';
 
 class MapContainer extends Component {
   static propTypes = {
-    getMapData: propTypes.func.isRequired,
+    getValues: propTypes.func.isRequired,
     mapID: propTypes.arrayOf(propTypes.string).isRequired,
     mapData: propTypes.arrayOf(propTypes.arrayOf(propTypes.number)).isRequired,
   }
 
-  handleGetMapData = () => {
-    const { getMapData } = this.props;
-    console.log(getMapData());
+  handleGetValues = () => {
+    const { getValues } = this.props;
+    console.log(getValues());
   }
 
   render() {
     const { mapID, mapData } = this.props;
+    console.log(this.handleGetValues);
     return (
       <div>
-        <input type="button" onClick={this.handleGetMapData} />
+        <input type="button" onClick={this.forcheck} />
         <BlockBox
           mapID={mapID}
           mapData={mapData}
@@ -38,7 +39,7 @@ const mapStateToProps = state => ({
 
 // modules/map/getMapData -> this.props
 const mapDispatchProps = dispatch => ({
-  getMapData: () => dispatch(getMapData()),
+  getValues: () => dispatch(getValues()),
 });
 
 export default connect(
