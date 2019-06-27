@@ -2,7 +2,7 @@
 import data from '../MOCK_DATA.json';
 
 // Actions
-const GET_MAP_DATA = 'GET_MAP_DATA';
+const GET_MAP_DATA = 'map/GET_MAP_DATA';
 // const SET_MAP_DATA = 'SET_MAP_DATA';
 
 // Action Creators
