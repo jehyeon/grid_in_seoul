@@ -24,7 +24,8 @@ class MapContainer extends Component {
     const { mapID, mapData, values } = this.props;
     return (
       <div>
-        <input type="button" onClick={this.handleGetValues} />
+        <input type="button" value="Get" onClick={this.handleGetValues} />
+        <br />
         { values }
         <BlockBox
           mapID={mapID}

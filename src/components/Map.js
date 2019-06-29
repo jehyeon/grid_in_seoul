@@ -1,14 +1,13 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import './Map.css';
 
 const Block = ({ name, id }) => (
-  <div className="block" id={id.toString()} name={name}>
-    { name }
-  </div>
+  <div className="block" id={id.toString()} name={name} />
 );
 
 const BlockBox = ({ mapID, mapData }) => (
-  <div>
+  <div className="blockBox">
     {mapData.map(line => (
       line.map(item => (
         <Block
