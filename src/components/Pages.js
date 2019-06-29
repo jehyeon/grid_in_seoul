@@ -17,7 +17,7 @@ const PageButton = ({ activate, onClick, name }) => (
 // eslint-disable-next-line object-curly-newline
 const Pages = ({ cursor, onNext, onPrevious, onSelect }) => (
   <div className="pages">
-    <input type="button" className="previous" onClick={onPrevious} />
+    <input type="button" className="previous" value="<<" onClick={onPrevious} />
     {/* index is not good */}
     {pages.map((page, index) => (
       <PageButton
@@ -27,7 +27,7 @@ const Pages = ({ cursor, onNext, onPrevious, onSelect }) => (
         key={page.toString()}
       />
     ))}
-    <input type="button" className="next" onClick={onNext} />
+    <input type="button" className="next" value=">>" onClick={onNext} />
   </div>
 );
 

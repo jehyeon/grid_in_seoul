@@ -1,0 +1,24 @@
+.blockBox {
+  /* Temporary */
+  position: absolute;
+
+  top: 100px;
+  left: 50%;
+
+  margin-left: -127.5px;
+  width: 255px;
+}
+
+.block {
+  width: 5px;
+  height: 5px;
+
+  border: 1px solid gray;
+  border-radius: 50%;
+
+  float: left;
+}
+
+.block[id='0'] {
+  border: 1px solid #eeeeee;
+}
