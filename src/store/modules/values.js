@@ -13,32 +13,24 @@ const initialState = {
     pages: 1,
     period: 0,
   },
+  values: [],
 };
-
-// Functions
-function searchTheValues(options) {
-  if (JSON.stringify(options) === JSON.stringify({})) {
-    return -1;
-  }
-  const TypesOfAll = data.values.map(value => value.type);
-
-  // Fast and limited -> to be update
-  TypesOfAll.map(type => JSON.stringify(type) === JSON.stringify(options));
-
-  return TypesOfAll.indexOf(true);
-}
 
 // Reducers
 export default function values(state = initialState, action) {
   switch (action.type) {
-    case GET_VALUES:
-      // eslint-disable-next-line no-case-declarations
-      const indexOfValue = searchTheValues(action.options);
-      console.log(indexOfValue);
-      if (indexOfValue > 0) {
-        return data.values[indexOfValue].value;
+    case GET_VALUES: {
+      const index = data.values
+        .map(value => JSON.stringify(value.type) === JSON.stringify(action.options))
+        .indexOf(true);
+      if (index > -1) {
+        return {
+          ...state,
+          values: data.values[index].value,
+        };
       }
       return state;
+    }
     default:
       return state;
   }

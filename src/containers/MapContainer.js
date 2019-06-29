@@ -9,19 +9,23 @@ class MapContainer extends Component {
     getValues: propTypes.func.isRequired,
     mapID: propTypes.arrayOf(propTypes.string).isRequired,
     mapData: propTypes.arrayOf(propTypes.arrayOf(propTypes.number)).isRequired,
+    values: propTypes.arrayOf(propTypes.number).isRequired,
   }
 
   handleGetValues = () => {
     const { getValues } = this.props;
-    console.log(getValues());
+    getValues({
+      pages: 1,
+      period: 0,
+    });
   }
 
   render() {
-    const { mapID, mapData } = this.props;
-    console.log(this.handleGetValues);
+    const { mapID, mapData, values } = this.props;
     return (
       <div>
-        <input type="button" onClick={this.forcheck} />
+        <input type="button" onClick={this.handleGetValues} />
+        { values }
         <BlockBox
           mapID={mapID}
           mapData={mapData}
@@ -35,11 +39,12 @@ class MapContainer extends Component {
 const mapStateToProps = state => ({
   mapID: state.map.mapID,
   mapData: state.map.mapData,
+  values: state.values.values,
 });
 
 // modules/map/getMapData -> this.props
 const mapDispatchProps = dispatch => ({
-  getValues: () => dispatch(getValues()),
+  getValues: options => dispatch(getValues(options)),
 });
 
 export default connect(
