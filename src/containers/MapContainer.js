@@ -9,23 +9,25 @@ class MapContainer extends Component {
     getValues: propTypes.func.isRequired,
     mapID: propTypes.arrayOf(propTypes.string).isRequired,
     mapData: propTypes.arrayOf(propTypes.arrayOf(propTypes.number)).isRequired,
-    values: propTypes.arrayOf(propTypes.number).isRequired,
+    // Options for get house value
+    page: propTypes.number.isRequired,
+    period: propTypes.number.isRequired,
+    // values: propTypes.arrayOf(propTypes.number).isRequired,
   }
 
-  handleGetValues = () => {
+  handleGetValues = (options) => {
     const { getValues } = this.props;
-    getValues({
-      page: 0,
-      period: 7,
-    });
+    getValues(options);
   }
 
   render() {
-    const { mapID, mapData, values } = this.props;
+    const {
+      mapID, mapData, page, period,
+    } = this.props;
+    const values = this.handleGetValues({ page, period });
     return (
       <div>
-        <input type="button" value="Get" onClick={this.handleGetValues} />
-        <br />
+        {/* <input type="button" value="Get" onClick={this.handleGetValues} /> */}
         { values }
         <BlockBox
           mapID={mapID}
@@ -40,7 +42,9 @@ class MapContainer extends Component {
 const mapStateToProps = state => ({
   mapID: state.map.mapID,
   mapData: state.map.mapData,
-  values: state.values.values,
+  page: state.pages.cursor,
+  period: state.period.cursor,
+  // values: state.values.values,
 });
 
 // modules/map/getMapData -> this.props

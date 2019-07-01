@@ -17,6 +17,7 @@ export const previousPage = () => ({ type: PREVIOUS_PAGE });
 const initialState = {
   cursor: 0,
   pages: data.pages,
+  pageName: data.pages[0],
 };
 
 // Reducer
@@ -32,6 +33,7 @@ export default function pages(state = initialState, action) {
         return {
           ...state,
           cursor: action.pageId,
+          pageName: data.pages[action.pageId],
         };
       } return state;
     case NEXT_PAGE:
@@ -39,6 +41,7 @@ export default function pages(state = initialState, action) {
         return {
           ...state,
           cursor: state.cursor + 1,
+          pageName: data.pages[state.cursor + 1],
         };
       } return state;
     case PREVIOUS_PAGE:
@@ -46,6 +49,7 @@ export default function pages(state = initialState, action) {
         return {
           ...state,
           cursor: state.cursor - 1,
+          pageName: data.pages[state.cursor - 1],
         };
       } return state;
     default:

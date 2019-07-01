@@ -10,6 +10,8 @@ class PageContainer extends Component {
     previousPage: propTypes.func.isRequired,
     selectPage: propTypes.func.isRequired,
     cursor: propTypes.number.isRequired,
+    pages: propTypes.arrayOf(propTypes.string).isRequired,
+    pageName: propTypes.string.isRequired,
   }
 
   handleNext = () => {
@@ -28,13 +30,15 @@ class PageContainer extends Component {
   }
 
   render() {
-    const { cursor } = this.props;
+    const { cursor, pages, pageName } = this.props;
     return (
       <Pages
         onNext={this.handleNext}
         onPrevious={this.handlePrevious}
         onSelect={index => this.handleSelect(index)}
         cursor={cursor}
+        pages={pages}
+        pageName={pageName}
       />
     );
   }
@@ -44,6 +48,8 @@ class PageContainer extends Component {
 const mapStateToProps = state => ({
   // pages: state.pages.pages,
   cursor: state.pages.cursor,
+  pages: state.pages.pages,
+  pageName: state.pages.pageName,
 });
 
 // props로 넣어줄 action creatores
