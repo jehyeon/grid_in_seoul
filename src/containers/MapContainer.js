@@ -15,8 +15,8 @@ class MapContainer extends Component {
   handleGetValues = () => {
     const { getValues } = this.props;
     getValues({
-      pages: 1,
-      period: 0,
+      page: 0,
+      period: 7,
     });
   }
 
