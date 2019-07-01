@@ -10,7 +10,7 @@ export const getValues = options => ({ type: GET_VALUES, options });
 // Initial State
 const initialState = {
   options: {
-    pages: 1,
+    page: 1,
     period: 0,
   },
   values: [],
