@@ -12,7 +12,7 @@ class MapContainer extends Component {
     // Options for get house value
     page: propTypes.number.isRequired,
     period: propTypes.number.isRequired,
-    // values: propTypes.arrayOf(propTypes.number).isRequired,
+    values: propTypes.arrayOf(propTypes.number).isRequired,
   }
 
   handleGetValues = (options) => {
@@ -22,16 +22,18 @@ class MapContainer extends Component {
 
   render() {
     const {
-      mapID, mapData, page, period,
+      mapID, mapData, page, period, values
     } = this.props;
-    const values = this.handleGetValues({ page, period });
+
     return (
       <div>
-        {/* <input type="button" value="Get" onClick={this.handleGetValues} /> */}
-        { values }
+        {/* ! Need to checkwWhy values are updated without onClick */}
+        <input className="hidden" type="button" onClick={this.handleGetValues({page, period})} />
+        <div className="temp">{values}</div>
         <BlockBox
           mapID={mapID}
           mapData={mapData}
+          values={values}
         />
       </div>
     );
@@ -44,7 +46,7 @@ const mapStateToProps = state => ({
   mapData: state.map.mapData,
   page: state.pages.cursor,
   period: state.period.cursor,
-  // values: state.values.values,
+  values: state.values.values,
 });
 
 // modules/map/getMapData -> this.props
