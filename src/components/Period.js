@@ -3,13 +3,17 @@ import propTypes from 'prop-types';
 import './Period.css';
 
 const PeriodButton = ({ activate, onClick, name }) => (
-  <div className="period"
+  // ! Need to fix eslint(jsx-a11y/interactive-supports-focus)
+  <div 
+    role="button"
+    className="period"
     activate={`${activate}`}
     onClick={onClick}
+    onKeyDown={onClick}
     name={name}
   >
     {name}
-    <span className="circle"></span>
+    <span className="circle" />
   </div>
 );
 

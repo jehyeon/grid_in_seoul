@@ -22,13 +22,13 @@ class MapContainer extends Component {
 
   render() {
     const {
-      mapID, mapData, page, period, values
+      mapID, mapData, page, period, values,
     } = this.props;
 
     return (
       <div>
         {/* ! Need to checkwWhy values are updated without onClick */}
-        <input className="hidden" type="button" onClick={this.handleGetValues({page, period})} />
+        <input className="hidden" type="button" onClick={this.handleGetValues({ page, period })} />
         <div className="temp">{values}</div>
         <BlockBox
           mapID={mapID}
