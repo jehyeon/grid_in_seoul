@@ -1,6 +1,6 @@
 {
   "name": "grid-in-seoul",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "eslint-config-airbnb": "^17.1.0",
