@@ -10,7 +10,7 @@ export const getValues = options => ({ type: GET_VALUES, options });
 // Initial State
 const initialState = {
   options: {
-    page: 1,
+    page: 0,
     period: 0,
   },
   values: [],
@@ -20,9 +20,8 @@ const initialState = {
 export default function values(state = initialState, action) {
   switch (action.type) {
     case GET_VALUES: {
-      const index = data.values
-        .map(value => JSON.stringify(value.type) === JSON.stringify(action.options))
-        .indexOf(true);
+      const index = data.values.map(value => value.type.page === action.options.page && value.type.period === action.options.period).indexOf(true);
+      
       if (index > -1) {
         return {
           ...state,

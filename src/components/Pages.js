@@ -1,5 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import './Pages.css';
 
 // import './Pages.css';
 
@@ -17,18 +18,11 @@ const Pages = ({
   pageName, onNext, onPrevious,
 }) => (
   <div className="pages">
-    <input type="button" className="previous" value="<<" onClick={onPrevious} />
-    {/* index is not good */}
-    {/* {pages.map((page, index) => (
-      <PageButton
-        activate={cursor === index}
-        onClick={() => onSelect(index)}
-        name={page}
-        key={page.toString()}
-      />
-    ))} */}
-    {pageName}
-    <input type="button" className="next" value=">>" onClick={onNext} />
+    {/* ! Need to fix eslint(jsx-a11y/interactive-supports-focus) */}
+    <div role="button" className="previous button" onClick={onPrevious} onKeyDown={onPrevious} />
+    <div className="pageName">{pageName}</div>
+    {/* ! Need to fix eslint(jsx-a11y/interactive-supports-focus) */}
+    <div className="next button" onClick={onNext} onKeyDown={onNext} />
   </div>
 );
 

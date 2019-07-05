@@ -1,22 +1,27 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import './Period.css';
 
 const PeriodButton = ({ activate, onClick, name }) => (
-  <input
-    type="button"
+  // ! Need to fix eslint(jsx-a11y/interactive-supports-focus)
+  <div 
+    role="button"
+    className="period"
     activate={`${activate}`}
     onClick={onClick}
+    onKeyDown={onClick}
     name={name}
-    value={name}
-  />
+  >
+    {name}
+    <span className="circle" />
+  </div>
 );
 
 const Period = ({
   // onNext, onPrevious,
   period, cursor, onSelect,
 }) => (
-  <div className="period">
-    {/* <input type="button" className="previous" value="<<" onClick={onPrevious} /> */}
+  <div className="periods">
     {/* index is not good */}
     {period.map((peach, index) => (
       <PeriodButton
@@ -26,7 +31,6 @@ const Period = ({
         key={peach.toString()}
       />
     ))}
-    {/* <input type="button" className="next" value=">>" onClick={onNext} /> */}
   </div>
 );
 

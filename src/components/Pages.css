@@ -1,0 +1,38 @@
+/* Magic number is not good */
+.pages {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+
+  width: 200px;
+  
+  margin-left: -100px;
+  user-select: none;
+}
+
+.pageName {
+  display: inline;
+  font-size: 11pt;
+}
+
+.button {
+  display: inline-block;
+  border-style: solid;
+  border-width: 10px;
+  width: 0;
+  height: 0;
+
+  position: relative;
+  top: 3px; /* not good */
+
+  cursor: pointer;
+}
+.next {
+  border-color: transparent transparent transparent #CCC;
+  margin-left: 20px;
+}
+
+.previous {
+  border-color: transparent #CCC transparent transparent;
+  margin-right: 20px;
+}

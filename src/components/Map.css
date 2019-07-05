@@ -1,24 +1,31 @@
 .blockBox {
-  /* Temporary */
+  /* Need to apply Sass */
   position: absolute;
 
-  top: 100px;
+  top: 50%;
   left: 50%;
 
-  margin-left: -127.5px;
-  width: 255px;
+  margin-top: -203px; /* height/2 */
+  margin-left: -288px; /* width/2 */
+  width: 576px; /* 36(block rows) * 12px(width) * 4px(margin) */
+  height: 406px; /* 26(block cols) * 12px(height) * 2px(margin) */
 }
 
 .block {
-  width: 5px;
-  height: 5px;
+  width: 12px;
+  height: 12px;
 
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   border-radius: 50%;
+
+  margin: 1px 2px 1px 2px;
+
+  background-color: #EEE;
 
   float: left;
 }
 
 .block[id='0'] {
-  border: 1px solid #eeeeee;
+  /* border: 1px solid #eeeeee; */
+  opacity: 0;
 }
