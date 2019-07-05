@@ -6,7 +6,7 @@
     "아파트(전세)"
   ],
   "period": [
-    "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"
+    "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"
   ],
   "area": {
     "id": [
@@ -49,7 +49,7 @@
     {
       "type": {
         "page": 1,
-        "period": 6
+        "period": 5
       },
       "value": [
         0,
@@ -83,7 +83,7 @@
     {
       "type": {
         "page": 2,
-        "period": 8
+        "period": 7
       },
       "value": [
         0,
@@ -117,7 +117,7 @@
     {
       "type": {
         "page": 0,
-        "period": 2
+        "period": 1
       },
       "value": [
         0,
@@ -151,7 +151,7 @@
     {
       "type": {
         "page": 2,
-        "period": 3
+        "period": 2
       },
       "value": [
         0,
@@ -185,7 +185,7 @@
     {
       "type": {
         "page": 3,
-        "period": 3
+        "period": 2
       },
       "value": [
         0,
@@ -219,7 +219,7 @@
     {
       "type": {
         "page": 2,
-        "period": 2
+        "period": 1
       },
       "value": [
         0,
@@ -253,7 +253,7 @@
     {
       "type": {
         "page": 0,
-        "period": 1
+        "period": 0
       },
       "value": [
         0,
@@ -291,40 +291,6 @@
       },
       "value": [
         0,
-        1090,
-        616,
-        407,
-        473,
-        476,
-        656,
-        439,
-        363,
-        442,
-        393,
-        454,
-        572,
-        608,
-        450,
-        916,
-        591,
-        453,
-        872,
-        649,
-        575,
-        813,
-        446,
-        531,
-        579,
-        418
-      ]
-    },
-    {
-      "type": {
-        "page": 2,
-        "period": 1
-      },
-      "value": [
-        0,
         1068,
         603,
         411,
@@ -355,7 +321,7 @@
     {
       "type": {
         "page": 1,
-        "period": 5
+        "period": 4
       },
       "value": [
         0,
@@ -389,7 +355,7 @@
     {
       "type": {
         "page": 0,
-        "period": 4
+        "period": 3
       },
       "value": [
         0,
@@ -423,7 +389,7 @@
     {
       "type": {
         "page": 3,
-        "period": 8
+        "period": 7
       },
       "value": [
         0,
@@ -457,7 +423,7 @@
     {
       "type": {
         "page": 0,
-        "period": 8
+        "period": 7
       },
       "value": [
         0,
@@ -491,16 +457,7 @@
     {
       "type": {
         "page": 3,
-        "period": 0
-      },
-      "value": [
-        0
-      ]
-    },
-    {
-      "type": {
-        "page": 3,
-        "period": 2
+        "period": 1
       },
       "value": [
         0,
@@ -534,7 +491,7 @@
     {
       "type": {
         "page": 2,
-        "period": 7
+        "period": 6
       },
       "value": [
         0,
@@ -568,7 +525,7 @@
     {
       "type": {
         "page": 0,
-        "period": 7
+        "period": 6
       },
       "value": [
         0,
@@ -602,7 +559,7 @@
     {
       "type": {
         "page": 3,
-        "period": 5
+        "period": 4
       },
       "value": [
         0,
@@ -636,7 +593,7 @@
     {
       "type": {
         "page": 3,
-        "period": 4
+        "period": 3
       },
       "value": [
         0,
@@ -670,7 +627,7 @@
     {
       "type": {
         "page": 2,
-        "period": 5
+        "period": 4
       },
       "value": [
         0,
@@ -704,41 +661,7 @@
     {
       "type": {
         "page": 0,
-        "period": 0
-      },
-      "value": [
-        0,
-        553,
-        393,
-        313,
-        367,
-        447,
-        439,
-        359,
-        327,
-        352,
-        338,
-        351,
-        384,
-        473,
-        442,
-        532,
-        395,
-        406,
-        509,
-        376,
-        393,
-        632,
-        330,
-        503,
-        476,
-        345
-      ]
-    },
-    {
-      "type": {
-        "page": 0,
-        "period": 3
+        "period": 2
       },
       "value": [
         0,
@@ -772,7 +695,7 @@
     {
       "type": {
         "page": 0,
-        "period": 6
+        "period": 5
       },
       "value": [
         0,
@@ -806,7 +729,7 @@
     {
       "type": {
         "page": 2,
-        "period": 4
+        "period": 3
       },
       "value": [
         0,
@@ -840,7 +763,7 @@
     {
       "type": {
         "page": 1,
-        "period": 2
+        "period": 1
       },
       "value": [
         0,
@@ -874,7 +797,7 @@
     {
       "type": {
         "page": 2,
-        "period": 6
+        "period": 5
       },
       "value": [
         0,
@@ -908,7 +831,7 @@
     {
       "type": {
         "page": 1,
-        "period": 1
+        "period": 0
       },
       "value": [
         0,
@@ -942,7 +865,7 @@
     {
       "type": {
         "page": 3,
-        "period": 7
+        "period": 6
       },
       "value": [
         0,
@@ -976,7 +899,7 @@
     {
       "type": {
         "page": 0,
-        "period": 5
+        "period": 4
       },
       "value": [
         0,
@@ -1010,7 +933,7 @@
     {
       "type": {
         "page": 3,
-        "period": 1
+        "period": 0
       },
       "value": [
         0,
@@ -1044,7 +967,7 @@
     {
       "type": {
         "page": 1,
-        "period": 4
+        "period": 3
       },
       "value": [
         0,
@@ -1078,7 +1001,7 @@
     {
       "type": {
         "page": 1,
-        "period": 8
+        "period": 7
       },
       "value": [
         0,
@@ -1112,7 +1035,7 @@
     {
       "type": {
         "page": 1,
-        "period": 7
+        "period": 6
       },
       "value": [
         0,
@@ -1146,7 +1069,7 @@
     {
       "type": {
         "page": 1,
-        "period": 3
+        "period": 2
       },
       "value": [
         0,
@@ -1179,17 +1102,8 @@
     },
     {
       "type": {
-        "page": 1,
-        "period": 0
-      },
-      "value": [
-        0
-      ]
-    },
-    {
-      "type": {
         "page": 3,
-        "period": 6
+        "period": 5
       },
       "value": [
         0,
