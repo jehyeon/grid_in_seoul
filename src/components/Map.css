@@ -23,9 +23,20 @@
   background-color: #EEE;
 
   float: left;
+
+  cursor: pointer;
+}
+
+.block:hover {
+  width: 17px;
+  height: 17px;
+
+  margin: -1.5px -0.5px -1.5px -0.5px;
 }
 
 .block[id='0'] {
   /* border: 1px solid #eeeeee; */
   opacity: 0;
+
+  cursor: default;
 }
