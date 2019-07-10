@@ -4,8 +4,9 @@ import './Period.css';
 
 const PeriodButton = ({ activate, onClick, name }) => (
   // ! Need to fix eslint(jsx-a11y/interactive-supports-focus)
-  <div 
+  <div
     role="button"
+    tabIndex="0"
     className="period"
     activate={`${activate}`}
     onClick={onClick}

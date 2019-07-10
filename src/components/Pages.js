@@ -18,11 +18,9 @@ const Pages = ({
   pageName, onNext, onPrevious,
 }) => (
   <div className="pages">
-    {/* ! Need to fix eslint(jsx-a11y/interactive-supports-focus) */}
-    <div role="button" className="previous button" onClick={onPrevious} onKeyDown={onPrevious} />
+    <div role="button" tabIndex="0" className="previous button" onClick={onPrevious} onKeyDown={onPrevious} />
     <div className="pageName">{pageName}</div>
-    {/* ! Need to fix eslint(jsx-a11y/interactive-supports-focus) */}
-    <div className="next button" onClick={onNext} onKeyDown={onNext} />
+    <div role="button" tabIndex="0" className="next button" onClick={onNext} onKeyDown={onNext} />
   </div>
 );
 
